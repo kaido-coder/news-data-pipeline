@@ -1,0 +1,18 @@
+version: 2
+sources:
+  - name: dev
+    database: db
+    tables:
+    - name: raw_news
+      columns:
+        - name: article_id
+          tests:
+            - unique
+            - not_null
+        - name: title
+        - name: description
+        - name: pub_date
+        - name: source_id
+        - name: category
+        - name: language
+        - name: raw_json

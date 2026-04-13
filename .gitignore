@@ -1,0 +1,18 @@
+# Python va Airflow
+__pycache__/
+logs/
+.venv/
+env/
+# Database ma'lumotlari
+postgres/data/
+
+# Muhit o'zgaruvchilari (Parollar)
+.env
+
+# dbt
+dbt/target/
+dbt/dbt_packages/
+dbt/logs/
+
+# Mac/OS keraksiz fayllari
+.DS_Store
