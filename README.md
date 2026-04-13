@@ -18,7 +18,7 @@ This project is an automated, end-to-end data engineering pipeline designed to e
 ---
 
 ## 🔄 Pipeline Workflow
-
+![Airflow DAG](./assets/airflow.png)
 1. **Extract (API Integration):** A Python script runs via an Airflow PythonOperator, fetching the latest news articles from an external News API.
 2. **Load (Staging):** The raw JSON data is processed and inserted into a PostgreSQL staging table (`staging`).
 3. **Transform (dbt):** Airflow triggers a DockerOperator that spins up a dbt container. dbt models connect to PostgreSQL, clean the data (e.g., parsing arrays, removing special characters), and aggregate metrics into final reporting tables (`news_report` and `news_summary`).
@@ -30,7 +30,7 @@ This project is an automated, end-to-end data engineering pipeline designed to e
 ---
 
 ## 📊 Dashboard Preview
-*(Insert screenshots of your Superset Dashboard here)*
+![Superset Dashboard](./assets/superset_result.png)
 
 * **News by Category:** Visualizing the diversity of topics.
 * **Top Sources:** Tracking which publishers are most active.
@@ -42,6 +42,7 @@ This project is an automated, end-to-end data engineering pipeline designed to e
 ### Prerequisites
 * Docker and Docker Compose installed
 * A valid News API Key
+
 
 ### Steps
 1. **Clone the repository:**
