@@ -30,7 +30,7 @@ This project is an automated, end-to-end data engineering pipeline designed to e
 ---
 
 ## 📊 Dashboard Preview
-![Superset Dashboard](./assets/superset_result.png)
+![Superset Dashboard](./assets/superset_result_v2.png)
 
 * **News by Category:** Visualizing the diversity of topics.
 * **Top Sources:** Tracking which publishers are most active.
