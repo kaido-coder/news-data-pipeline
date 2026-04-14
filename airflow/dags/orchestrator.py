@@ -19,7 +19,7 @@ default_args = {
 dag = DAG(
     dag_id="news-api-orchestrator",
     default_args = default_args,
-    schedule = timedelta(minutes = 1),
+    schedule = timedelta(minutes = 10),
     catchup = False
 )
 
@@ -35,12 +35,13 @@ with dag:
         command = 'run',
         working_dir = '/usr/app',
         mounts = [
-            Mount(source='/home/sardor/fintech/fintech-data-pipeline/dbt/my_project', target='/usr/app', type='bind'),
-            Mount(source='/home/sardor/fintech/fintech-data-pipeline/dbt/profiles.yml', target='/root/.dbt/profiles.yml', type='bind')
+            Mount(source='/workspaces/news-data-pipeline/dbt/my_project', target='/usr/app', type='bind'),
+            Mount(source='/workspaces/news-data-pipeline/dbt/profiles.yml', target='/root/.dbt/profiles.yml', type='bind')
         ],
-        network_mode = 'fintech-data-pipeline_my-network', 
+        network_mode = 'host', 
         docker_url = 'unix://var/run/docker.sock', 
         auto_remove = 'success',
+        mount_tmp_dir = False,
         user = 'root' 
     )
 

@@ -4,7 +4,7 @@
 ) }}
 
 SELECT 
-    TRANSLATE(category::text, '[]"', '') AS category,
+    REPLACE(REPLACE(category::text, '{', ''), '}', '') AS category,
     count(*) as total_articles,
     count(DISTINCT source_id) as unique_sources
 FROM {{ ref('staging') }} -- Notice we use ref() to point to your clean table
