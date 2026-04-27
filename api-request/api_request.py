@@ -1,6 +1,6 @@
 import requests
 
-api_key = 'CG-ptGa6N3WC7ivg2MxFYBJWV1y'
+api_key = ''
 api_url = url = "https://newsdata.io/api/1/latest?apikey=pub_212273c2e8f5414bbdd43233abb51cca"
 
 def fetch_data():
